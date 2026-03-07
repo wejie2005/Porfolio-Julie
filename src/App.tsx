@@ -1,5 +1,5 @@
 import './App.css'
-import profilePic from './assets/profile.jpg';
+import profilePic from './assets/myprofile.png';
 
 interface ProjectProps {
   title: string;
@@ -19,11 +19,9 @@ function App() {
         </div>
       </nav>
 
-      {/* --- UPDATED HERO SECTION --- */}
       <section className="hero">
         <div className="hero-content">
-          
-          {/* Left Side: Text */}
+       
           <div className="hero-text">
             <h1>Hi, I'm Julie! 👋</h1>
             <p>
@@ -32,7 +30,6 @@ function App() {
             </p>
           </div>
 
-          {/* Right Side: Image */}
           <div className="hero-image">
             <img 
               src={profilePic}
@@ -43,11 +40,20 @@ function App() {
 
         </div>
       </section>
-      {/* --------------------------- */}
 
-      {/* Moving Tech Stack Section */}
       <section className="tech-stack">
         <h3 style={{textAlign: 'center', marginBottom: '20px', color: '#64748b'}}>Technologies I Use</h3>
+          <p style={{ 
+           textAlign: 'center', 
+           marginBottom: '30px', 
+           color: '#94a3b8', 
+           maxWidth: '600px', 
+           margin: '0 auto 30px auto', 
+           lineHeight: '1.5',
+           fontSize: '0.95rem'
+           }}>
+           These are the technologies I have used to build projects and refine my skills. I am continuously exploring these tools, as well as learning new programming languages to expand my toolset.
+          </p>
         <TechMarquee />
       </section>
 
@@ -68,7 +74,6 @@ function App() {
           />
         </div>
 
-        {/* NEW: "Visit my GitHub" Section */}
         <div className="more-projects" style={{ textAlign: 'center', marginTop: '40px' }}>
           <p style={{ color: '#64748b', marginBottom: '15px' }}>
             Want to see more of my work?
@@ -92,7 +97,6 @@ function App() {
         </div>
       </section>
 
-       {/* Contact Section */}
       <footer id="contact" className="contact">
         <h2>Let's Connect</h2>
         <p className="contact-text">
@@ -100,10 +104,8 @@ function App() {
           Feel free to reach out!
         </p>
 
-        {/* The Social Icons Container */}
         <div className="social-icons">
-          
-          {/* 1. GitHub */}
+
           <a 
             href="https://github.com/JulsAlvarez2005" 
             target="_blank" 
@@ -113,7 +115,6 @@ function App() {
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
           </a>
 
-          {/* 2. LinkedIn */}
           <a 
             href="https://www.linkedin.com/in/julie-anne-pesa%C3%B1a-667628362/" 
             target="_blank" 
@@ -123,21 +124,20 @@ function App() {
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
           </a>
 
-          {/* 3. Email (mailto) */}
           <a 
-            href="mailto:pesanajulieanne@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=pesanajulieanne@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Email"
           >
-            {/* Using a clean SVG for the email icon */}
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" 
               alt="Email" 
             />
           </a>
           
-          {/* 4. Facebook */}
           <a 
-            href="https://www.facebook.com/itsmejlieanne" /* Don't forget to update your Facebook Username! */
+            href="https://www.facebook.com/itsmejlieanne" 
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -154,7 +154,6 @@ function App() {
   )
 }
 
-// --- COMPONENT: THE MOVING MARQUEE ---
 const TechMarquee = () => {
   const skills = [
     { name: "React Native", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -177,7 +176,6 @@ const TechMarquee = () => {
   return (
     <div className="marquee-container">
       <div className="marquee-track">
-        {/* We render the list twice to create the infinite loop effect */}
         {skills.map((skill, index) => (
           <div key={index} className="skill-item">
             <img src={skill.img} alt={skill.name} />

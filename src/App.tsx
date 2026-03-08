@@ -72,6 +72,13 @@ function App() {
             tags={['Laravel', 'PHP', 'MySQL', 'HTML', 'CSS']}
             link="https://github.com/JulsAlvarez2005/TR-Studio-Management-System"
           />
+
+          <ProjectCard 
+            title="Sample Barangay Appointment System" 
+            description=" A web application that allows residents to book appointments for various barangay services, such as ID applications, permits, and consultations."
+            tags={['Node.js', 'Supabase', 'React', 'HTML', 'CSS',' TypeScript']}
+            link="https://bb-barangay-appointment-system-project.vercel.app/"
+          />
         </div>
 
         <div className="more-projects" style={{ textAlign: 'center', marginTop: '40px' }}>

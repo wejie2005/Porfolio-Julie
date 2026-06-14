@@ -16,6 +16,8 @@ function App() {
         <div className="links">
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
+           <a href="#skills">Skills</a>
+           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
         </div>
       </nav>
 
@@ -25,8 +27,8 @@ function App() {
           <div className="hero-text">
             <h1>Hi, I'm Julie! 👋</h1>
             <p>
-               I'm a Computer Science student who loves turning classroom theory into real-world applications. 
-               When I'm not studying, I'm building full-stack projects, learning new frameworks, and seeking an internship where I can grow and contribute to a great team.
+              As a Computer Science student, I am incredibly interested in exploring roles in software engineering and data analytics. 
+              I believe that if given the opportunity to intern at your company, I can turn my classroom knowledge into real support for your team. I am looking for a place where I can learn from experienced engineers, take on real challenges, and grow into a strong developer who adds value to your projects.
             </p>
           </div>
 
@@ -42,20 +44,24 @@ function App() {
       </section>
 
       <section className="tech-stack">
+        <section id="skills">
         <h3 style={{textAlign: 'center', marginBottom: '20px', color: '#64748b'}}>Technologies I Use</h3>
           <p style={{ 
            textAlign: 'center', 
            marginBottom: '30px', 
            color: '#94a3b8', 
-           maxWidth: '600px', 
+           maxWidth: '1000px', 
            margin: '0 auto 30px auto', 
            lineHeight: '1.5',
            fontSize: '0.95rem'
            }}>
-           These are the technologies I have used to build projects and refine my skills. I am continuously exploring these tools, as well as learning new programming languages to expand my toolset.
+           These are the technologies I have used to build projects and refine my skills. <br>
+           </br>
+           I am continuously exploring these tools, as well as learning new programming languages to expand my toolset.
           </p>
         <TechMarquee />
       </section>
+    </section>
 
       <section id="projects">
         <h2 className="section-title">Recent Projects</h2>
@@ -114,7 +120,7 @@ function App() {
         <div className="social-icons">
 
           <a 
-            href="https://github.com/JulsAlvarez2005" 
+            href="https://github.com/wejie2005" 
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="GitHub"

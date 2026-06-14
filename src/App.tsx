@@ -92,7 +92,7 @@ function App() {
             Want to see more of my work?
           </p>
           <a 
-            href="https://github.com/JulsAlvarez2005" 
+            href="https://github.com/wejie2005" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn btn-outline"

@@ -1,5 +1,5 @@
 import './App.css'
-import profilePic from './assets/myprofile.png';
+import profilePic from './assets/me.jpg';
 
 interface ProjectProps {
   title: string;

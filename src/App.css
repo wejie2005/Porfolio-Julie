@@ -358,3 +358,211 @@ body {
     gap: 28px; 
   }
 }
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* 2. THE RECTANGLE CARD: Fixed professional height, horizontal layout */
+.project-card {
+  display: flex;
+  flex-direction: row;    /* Left side image, right side text */
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  width: 100%;
+  height: 260px;          /* 🟢 FIX: Locks down a clean, uniform height for the entire card */
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* 3. COMFORTABLE IMAGE HOLDER */
+.project-card-image-wrapper {
+  width: 45%;             /* Balanced proportions */
+  height: 100%;
+  background-color: #f8fafc; /* Subtle dashboard-matching background */
+  border-right: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;          /* 🟢 Frame margin: gives the screenshot a sleek bezel layout */
+  box-sizing: border-box;
+}
+
+/* 4. THE SCREENSHOT RESIZING ENGINE */
+.project-card-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;     /* 🟢 FIX: Guarantees 100% of your dashboard is visible */
+  border-radius: 6px;      /* Slightly rounds your screenshot edges for a clean interface mock look */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Adds a subtle drop shadow to your web app UI */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -4px rgba(15, 23, 42, 0.08);
+}
+.project-card:hover .project-card-screenshot {
+  transform: scale(1.02); /* Slight pop out on hover */
+}
+
+/* 5. TEXT CONTENT PACKAGING RIGHT SIDE */
+.project-card .card-content {
+  width: 55%;
+  padding: 24px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the texts perfectly next to the image */
+  box-sizing: border-box;
+}
+
+/* Responsive design for tablets and mobile viewports */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    height: auto;          /* Let height expand dynamically on tiny phones */
+  }
+  .project-card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .project-card .card-content {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Container layout flex setup */
+.badge-showcase-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* THE CONTAINER: Enforces uniform circle constraints */
+.badge-holder-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50% !important; /* Forces layout to remain beautifully round */
+  width: 220px !important;
+  height: 220px !important;
+  position: relative;            /* Core framework for absolute alignment placement */
+  overflow: hidden;              /* Automatically masks image overflow to maintain circle bounds */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s;
+  box-sizing: border-box;
+  padding: 0;                    /* Reset container padding to prevent image offset shifts */
+}
+
+/* Specific training circle card overwrite rule targeting to protect round configuration */
+.badge-holder-card.training-full-width {
+  max-width: 220px !important;
+}
+
+/* Text & Vector Icon housing block */
+.badge-inner-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+  z-index: 2;
+}
+
+.certificate-hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* 🛠️ THE FIXES */
+  object-fit: contain;      /* 🟢 Scale down dynamically so 100% of the document boundary fits inside the view */
+  padding: 14px;            /* 🟢 Inset padding frame so the certificate corners don't get cut by the circle's round walls */
+  background: #ffffff;      /* Matches document backdrop to keep the circle uniformly white */
+  
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+  pointer-events: none;
+  box-sizing: border-box;   /* Includes padding calculations within full size rules */
+}
+/* GLOBAL HOVER INTERACTIONS */
+.badge-holder-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.14);
+}
+
+/* 🟢 Bring image to life when card holder parent is hovered */
+.badge-holder-card:hover .certificate-hover-image {
+  opacity: 1;
+  transform: scale(1);          /* Transitions cleanly to base size scale */
+}
+
+/* Hides inner texts dynamically while image is active */
+.badge-holder-card:hover .badge-inner-content {
+  opacity: 0;                   /* Completely hides default view content on hover */
+}
+
+/* Hover Accent Color Flares matching your issuers */
+.badge-holder-card.certification-circle:hover { border-color: rgba(0, 163, 161, 0.6); }
+.badge-holder-card.certnexus-circle:hover { border-color: rgba(79, 70, 229, 0.6); }
+.badge-holder-card.ateneo-circle:hover { border-color: rgba(29, 78, 216, 0.6); }
+
+/* --- ICON & TYPOGRAPHY SYSTEM STYLES --- */
+.badge-graphic-ring {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.certification-ring { background: rgba(0, 163, 161, 0.06); color: #00a3a1; border: 2px dashed rgba(0, 163, 161, 0.25); }
+.certnexus-ring { background: rgba(79, 70, 229, 0.06); color: #4f46e5; border: 2px dashed rgba(79, 70, 229, 0.25); }
+.ateneo-ring { background: rgba(29, 78, 216, 0.06); color: #1d4ed8; border: 2px dashed rgba(29, 78, 216, 0.25); }
+.badge-vector-icon { width: 24px; height: 24px; }
+
+.badge-main-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+  max-width: 160px;
+}
+
+.badge-issuers { font-size: 0.7rem; color: #64748b; margin: 0 0 10px 0; font-weight: 500; }
+.badge-mini-tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.badge-mini-tag.training-tag { background: rgba(29, 78, 216, 0.06); color: #1d4ed8; }

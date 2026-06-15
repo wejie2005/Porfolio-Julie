@@ -1,11 +1,21 @@
 import './App.css'
 import profilePic from './assets/me.jpg';
+import dermaImg from './assets/derma.png';
+import trImg from './assets/tr.png';
+import brgyImg from './assets/barangay.png';
+import brokImg from './assets/brok.png';
+import banImg from './assets/banana.png';
+import pianoImg from './assets/piano.jpg';
+import dbCert from './assets/db-cert.png';
+import htmlCert from './assets/html-css-cert.png';
+import ateneoCert from './assets/ateneo-cert.png';
 
 interface ProjectProps {
   title: string;
   description: string;
   tags: string[];
   link: string;
+  image: string;
 }
 
 function App() {
@@ -17,7 +27,8 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
            <a href="#skills">Skills</a>
-           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+           <a href="/Pesana_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+           <a href="#certifications">Certifications</a>
         </div>
       </nav>
 
@@ -64,35 +75,63 @@ function App() {
     </section>
 
       <section id="projects">
-        <h2 className="section-title">Recent Projects</h2>
-        <div className="projects-grid">
-          <ProjectCard 
-            title="Derma Agent Triage" 
-            description=" Medical triage system that combines Computer Vision (OCR) and Retrieval-Augmented Generation (RAG) to identify skin irritants and provide clinical context."
-            tags={['Python', 'Hugging Face', 'Gradio', 'Llama 3.3']}
-            link="https://huggingface.co/spaces/JulsAlvarez2005/derma-agent-triage"
-          />
-           <ProjectCard 
-            title="Studio Management Tracker" 
-            description=" Designed to streamline operations for audio recording studios."
-            tags={['Laravel', 'PHP', 'MySQL', 'HTML', 'CSS']}
-            link="https://github.com/JulsAlvarez2005/TR-Studio-Management-System"
-          />
+  <h2 className="section-title">Recent Projects</h2>
+  <div className="projects-grid">
+    <ProjectCard 
+      title="Derma Agent Triage" 
+      description="Medical triage system that combines Computer Vision (OCR) and Retrieval-Augmented Generation (RAG) to identify skin irritants and provide clinical context."
+      tags={['Python', 'Hugging Face', 'Gradio', 'Llama 3.3']}
+      link="https://huggingface.co/spaces/JulsAlvarez2005/derma-agent-triage"
+      image={dermaImg} 
+    />
+    
+    <ProjectCard 
+      title="Studio Management Tracker" 
+      description="Designed to streamline operations for audio recording studios."
+      tags={['Laravel', 'PHP', 'MySQL', 'HTML', 'CSS']}
+      link="https://github.com/JulsAlvarez2005/TR-Studio-Management-System"
+      image={trImg} 
+    />
 
-          <ProjectCard 
-            title="Sample Barangay Appointment System" 
-            description=" A web application that allows residents to book appointments for various barangay services, such as ID applications, permits, and consultations."
-            tags={['Node.js', 'Supabase', 'React', 'HTML', 'CSS',' TypeScript']}
-            link="https://bb-barangay-appointment-system-project.vercel.app/"
-          />
-        </div>
+    <ProjectCard 
+      title="Sample Barangay Appointment System" 
+      description="A web application that allows residents to book appointments for various barangay services, such as ID applications, permits, and consultations."
+      tags={['Node.js', 'Supabase', 'React', 'HTML', 'CSS','TypeScript']}
+      link="https://bb-barangay-appointment-system-project.vercel.app/"
+      image={brgyImg}  
+    />
+
+     <ProjectCard 
+      title="Banana Leaf Disease Detection" 
+      description="Computer vision system utilizing CNNs to instantly identify banana crop infections from leaf images and mitigate agricultural yield loss."
+      tags={['Node.js', 'Supabase', 'React', 'HTML', 'CSS','TypeScript']}
+      link="https://bb-barangay-appointment-system-project.vercel.app/"
+      image={banImg}  
+    />
+
+    <ProjectCard 
+      title="Brokenshire Hotel Management System" 
+      description="Database-driven management system that optimizes hospitality workflows by managing guest reservations, service logs, and automated billing generation."
+      tags={['Laravel', 'SQL', 'React', 'PHP', 'React']}
+      link="https://github.com/jsh24776/BrokenShire-Hotel"
+      image={brokImg}  
+    />
+
+    <ProjectCard 
+      title="Air Piano" 
+      description="Gesture-controlled music application utilizing computer vision to map hand tracking landmarks into real-time audio frequencies, simulating a physical piano keyboard in mid-air."
+      tags={['C++']}
+      link=""
+      image={pianoImg}  
+    />
+  </div>
 
         <div className="more-projects" style={{ textAlign: 'center', marginTop: '40px' }}>
           <p style={{ color: '#64748b', marginBottom: '15px' }}>
             Want to see more of my work?
           </p>
           <a 
-            href="https://github.com/JulsAlvarez2005" 
+            href="https://github.com/wejie2005" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn btn-outline"
@@ -109,6 +148,8 @@ function App() {
           </a>
         </div>
       </section>
+
+      <Credentials />
 
       <footer id="contact" className="contact">
         <h2>Let's Connect</h2>
@@ -167,6 +208,83 @@ function App() {
   )
 }
 
+const Credentials: React.FC = () => {
+  return (
+    <section id="certifications" className="credentials-section" style={{ marginTop: '80px', marginBottom: '40px' }}>
+      <h2 className="section-title">Verified Credentials & Training</h2>
+      
+      {/* --- CERTIFICATIONS GROUP --- */}
+      <h3 style={{ color: '#64748b', fontSize: '1.1rem', marginBottom: '20px', textAlign: 'center' }}>
+        Professional Certifications
+      </h3>
+      <div className="badge-showcase-grid" style={{ marginBottom: '50px' }}>
+        
+        {/* Badge 1: ITS Databases */}
+        <div className="badge-holder-card certification-circle">
+          {/* 🖼️ Hover Image Layer */}
+          <img src={dbCert} alt="ITS Databases Certificate" className="certificate-hover-image" />
+          
+          <div className="badge-inner-content">
+            <div className="badge-graphic-ring certification-ring">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="badge-vector-icon">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+              </svg>
+            </div>
+            <h4 className="badge-main-title">ITS: Databases</h4>
+            <p className="badge-issuers">Certiport / Pearson VUE</p>
+            <span className="badge-mini-tag">Data Engineering</span>
+          </div>
+        </div>
+
+        {/* Badge 2: ITS HTML and CSS */}
+        <div className="badge-holder-card certification-circle">
+          {/* 🖼️ Hover Image Layer */}
+          <img src={htmlCert} alt="ITS HTML and CSS Certificate" className="certificate-hover-image" />
+          
+          <div className="badge-inner-content">
+            <div className="badge-graphic-ring certification-ring">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="badge-vector-icon">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+              </svg>
+            </div>
+            <h4 className="badge-main-title">ITS: HTML and CSS</h4>
+            <p className="badge-issuers">Certiport / Pearson VUE</p>
+            <span className="badge-mini-tag">Front-End</span>
+          </div>
+        </div>
+
+       
+      {/* --- GOOGLE ANALYTICS --- */}
+      </div>
+
+      {/* --- TRAININGS GROUP --- */}
+      <h3 style={{ color: '#64748b', fontSize: '1.1rem', marginBottom: '20px', textAlign: 'center' }}>
+        Executive & Specialized Training
+      </h3>
+      <div className="badge-showcase-grid">
+        
+        {/* Badge 4: Ateneo AI in Business Analytics */}
+        <div className="badge-holder-card ateneo-circle training-full-width">
+          {/* 🖼️ Hover Image Layer */}
+          <img src={ateneoCert} alt="Ateneo Analytics Certificate" className="certificate-hover-image" />
+          
+          <div className="badge-inner-content">
+            <div className="badge-graphic-ring ateneo-ring">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="badge-vector-icon">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0V3m7.5 13.5V3M9 6h3.75m-.75 3h3.75M9 12h3.75" />
+              </svg>
+            </div>
+            <h4 className="badge-main-title">AI in Business Analytics</h4>
+            <p className="badge-issuers">Ateneo de Manila University</p>
+            <span className="badge-mini-tag training-tag">Artificial Intelligence & Strategy</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
 const TechMarquee = () => {
   const skills = [
     { name: "React Native", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -206,16 +324,28 @@ const TechMarquee = () => {
   );
 };
 
-const ProjectCard = ({ title, description, tags, link }: ProjectProps) => {
+const ProjectCard = ({ title, description, tags, link, image }: ProjectProps) => {
   return (
     <article className="project-card">
+      {/* New Image Wrapper Box */}
+      <div className="project-card-image-wrapper">
+        <img 
+          src={image} 
+          alt={`${title} Project Screenshot`} 
+          className="project-card-screenshot" 
+        />
+      </div>
+      
+      {/* Existing card content layout below the image */}
       <div className="card-content">
         <h3 className="card-title">{title}</h3>
         <p className="card-desc">{description}</p>
         <div className="tags">
           {tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
         </div>
-        <a href={link} className="card-link">View Project &rarr;</a>
+        <a href={link} target="_blank" rel="noopener noreferrer" className="card-link">
+          View Project &rarr;
+        </a>
       </div>
     </article>
   );

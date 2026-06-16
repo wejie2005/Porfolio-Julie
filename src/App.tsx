@@ -105,7 +105,7 @@ function App() {
       title="Banana Leaf Disease Detection" 
       description="Computer vision system utilizing CNNs to instantly identify banana crop infections from leaf images and mitigate agricultural yield loss."
       tags={['Node.js', 'Supabase', 'React', 'HTML', 'CSS','TypeScript']}
-      link="https://bb-barangay-appointment-system-project.vercel.app/"
+      link="https://github.com/wejie2005/Banana-AI-Classification-Detection"
       image={banImg}  
     />
 
@@ -221,7 +221,7 @@ const Credentials: React.FC = () => {
         
         {/* Badge 1: ITS Databases */}
         <div className="badge-holder-card certification-circle">
-          {/* 🖼️ Hover Image Layer */}
+          {/* Hover Image Layer */}
           <img src={dbCert} alt="ITS Databases Certificate" className="certificate-hover-image" />
           
           <div className="badge-inner-content">
@@ -238,7 +238,7 @@ const Credentials: React.FC = () => {
 
         {/* Badge 2: ITS HTML and CSS */}
         <div className="badge-holder-card certification-circle">
-          {/* 🖼️ Hover Image Layer */}
+          {/* Hover Image Layer */}
           <img src={htmlCert} alt="ITS HTML and CSS Certificate" className="certificate-hover-image" />
           
           <div className="badge-inner-content">
@@ -265,7 +265,7 @@ const Credentials: React.FC = () => {
         
         {/* Badge 4: Ateneo AI in Business Analytics */}
         <div className="badge-holder-card ateneo-circle training-full-width">
-          {/* 🖼️ Hover Image Layer */}
+          {/* Hover Image Layer */}
           <img src={ateneoCert} alt="Ateneo Analytics Certificate" className="certificate-hover-image" />
           
           <div className="badge-inner-content">

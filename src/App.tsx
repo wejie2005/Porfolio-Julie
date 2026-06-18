@@ -9,6 +9,7 @@ import pianoImg from './assets/piano.jpg';
 import dbCert from './assets/db-cert.png';
 import htmlCert from './assets/html-css-cert.png';
 import ateneoCert from './assets/ateneo-cert.png';
+import analyticsCert from './assets/Analytics.png';
 
 interface ProjectProps {
   title: string;
@@ -254,7 +255,23 @@ const Credentials: React.FC = () => {
         </div>
 
        
-      {/* --- GOOGLE ANALYTICS --- */}
+        {/* --- GOOGLE ANALYTICS --- */}
+      <div className="badge-holder-card certification-circle">
+          {/* Hover Image Layer */}
+          <img src={analyticsCert} alt="Google Data Analytics Certificate" className="certificate-hover-image" />
+          
+          <div className="badge-inner-content">
+            <div className="badge-graphic-ring certification-ring">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="badge-vector-icon">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+              </svg>
+            </div>
+            <h4 className="badge-main-title">Google Data Analytics</h4>
+            <p className="badge-issuers">Google / Coursera</p>
+            <span className="badge-mini-tag">Data Analytics</span>
+          </div>
+        </div>
+        
       </div>
 
       {/* --- TRAININGS GROUP --- */}
